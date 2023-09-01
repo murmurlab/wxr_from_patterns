@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hesap</title>
+    <style>
+        #f1>div:nth-child(1)
+        {
+            /* height: 100px; */
+            /* line-height: 100px; */
+            text-align: center;
+            border: 2px dashed #f69c55;
+        }
+        #ui
+        {
+        flex: 1;
+        }
+        #f1
+        {
+            /* width: 100%; */
+            /* max-width: -webkit-fill-available; */
+        }
+        .calc
+        {
+            display: flex;
+            align-items: center;
+            /* flex: 1; */
+            flex-flow: wrap;
+            border: 0.05em solid red;
+            /* width:100%; */
+            /* display: flex; */
+            justify-content: center;
+        }
+        .cell
+        {
+/*             display: flex;
+            flex-flow: wrap;
+            align-items: end;
+            text-align: center; */
+        }
+        mtext
+        {
+/*             color: #f69c55;
+ */        }
+        .cell > div
+        {
+            /* width: 35%; */
+            /* max-width: 90%; */
+/*             flex: 1 1 0;
+ */        }
+        input
+        {
+            position: relative;
+            width: 0;
+            /* width: -webkit-fill-available; */
+            max-width: 35%;
+            min-width: 40px;
+            margin: 0% !important;
+            text-rendering: auto !important;
+            color: fieldtext !important;
+            letter-spacing: normal !important;
+            word-spacing: normal !important;
+            line-height: normal !important;
+            text-transform: none !important;
+            text-indent: 0px !important;
+            text-shadow: none !important;
+            display: inline-block !important;
+            text-align: start !important;
+            appearance: auto !important;
+            -webkit-rtl-ordering: logical !important;
+            cursor: text !important;
+            background-color: field !important;
+            padding: 1px 2px !important;
+            border-width: 2px !important;
+            border-style: inset !important;
+            border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133)) !important;
+            border-image: initial !important;
+        }
+        button
+        {
+            max-width: 4%;
+            min-width: 25px;
+            width: -webkit-fill-available;
+            margin: 1%;
+
+            appearance: auto !important;
+            text-rendering: auto !important;
+            color: buttontext !important;
+            letter-spacing: normal !important;
+            word-spacing: normal !important;
+            line-height: normal !important;
+            text-transform: none !important;
+            text-indent: 0px !important;
+            text-shadow: none !important;
+            display: inline-block !important;
+            text-align: center !important;
+            align-items: flex-start !important;
+            cursor: default !important;
+            box-sizing: border-box !important;
+            background-color: buttonface !important;
+            padding: 1px 6px !important;
+            border-width: 2px !important;
+            border-style: outset !important;
+            border-color: buttonborder !important;
+            border-image: initial !important;
+        }
+        *
+        {
+            /* 
+            flex-flow: wrap;
+            flex: 1; */
+        }
+
+mfrac {
+    position: relative;
+}
+
+msqrt {
+    /* position: relative; */
+    /* width: 100%; */
+    /* flex-flow: wrap; */
+    /* display: math; */
+}
+
+math {
+    /* width: 100%; */
+    /* position: relative; */
+}
+
+html {
+    /* width: 100%; */
+}
+
+body {/* margin: 0; *//* width: 100%; */row {
+}
+
+mfrac {
+    width: 100%;
+}
+
+msqrt {
+    /* width: -webkit-fill-available; */
+}
+        math
+        {
+    /*         display: flex;
+            align-items: center;
+ */
+    /* width: -webkit-fill-available; */
+    }
+    </style>
+</head>
+<body>
+    <p>
+         
+        square root
+    </p>
+    <div id="f1" class="calc">
+
+        <div id="f1_num">33</div>
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            <msqrt>
+                <mfrac>
+                    <mrow>
+                        <mtext>
+                            <input type="number" placeholder="tct değeri" id="inp1_1_1">
+                        </mtext>
+                        <mo>&#8290;</mo>
+                        <mo>x</mo>
+                        <mo>&#8290;</mo>
+                        <mn>10</mn>
+                    </mrow>
+                    <mrow>
+                        <mtext>
+                            <input type="number" placeholder="tno değeri" id="inp1_1_2">
+                        </mtext>
+                        <mo>&#8290;</mo>
+                        <mo>x</mo>
+                        <mo>&#8290;</mo>
+                        <mtext>
+                            <input type="number" placeholder="dts değeri" id="inp1_1_3">
+                        </mtext>
+                    </mrow>
+                </mfrac>
+            </msqrt>
+        </math>
+        <button type="button" id="res">=</button>
+        <div id="ret"></div>
+        
+    </div>
+
+    <script defer>
+        function calc(params) {
+            document.getElementById("ret").innerText = 
+            (parseFloat(document.querySelector("#inp1_1_1").value) * 10 /
+            (parseFloat(document.querySelector("#inp1_1_2").value) *
+            parseFloat(document.querySelector("#inp1_1_3").value))).toFixed(1);
+        }
+        document.getElementById("res").addEventListener("click", calc);
+    </script>
+</body>
+</html>

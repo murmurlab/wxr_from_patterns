@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hesap</title>
+    <style>
+        #f1>div:nth-child(1)
+        {
+            /* height: 100px; */
+            /* line-height: 100px; */
+            text-align: center;
+            border: 2px dashed #f69c55;
+        }
+        #ui
+        {
+        flex: 1;
+        }
+        #f1
+        {
+            /* width: 100%; */
+            /* max-width: -webkit-fill-available; */
+        }
+        .calc
+        {
+            display: flex;
+            align-items: center;
+            /* flex: 1; */
+            flex-flow: wrap;
+            border: 0.05em solid red;
+            /* width:100%; */
+            /* display: flex; */
+            justify-content: center;
+        }
+        .cell
+        {
+/*             display: flex;
+            flex-flow: wrap;
+            align-items: end;
+            text-align: center; */
+        }
+        mtext
+        {
+/*             color: #f69c55;
+ */        }
+        .cell > div
+        {
+            /* width: 35%; */
+            /* max-width: 90%; */
+/*             flex: 1 1 0;
+ */        }
+        input
+        {
+            position: relative;
+            width: 0;
+            /* width: -webkit-fill-available; */
+            max-width: 35%;
+            min-width: 40px;
+            margin: 0% !important;
+            text-rendering: auto !important;
+            color: fieldtext !important;
+            letter-spacing: normal !important;
+            word-spacing: normal !important;
+            line-height: normal !important;
+            text-transform: none !important;
+            text-indent: 0px !important;
+            text-shadow: none !important;
+            display: inline-block !important;
+            text-align: start !important;
+            appearance: auto !important;
+            -webkit-rtl-ordering: logical !important;
+            cursor: text !important;
+            background-color: field !important;
+            padding: 1px 2px !important;
+            border-width: 2px !important;
+            border-style: inset !important;
+            border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133)) !important;
+            border-image: initial !important;
+        }
+        button
+        {
+            max-width: 4%;
+            min-width: 25px;
+            width: -webkit-fill-available;
+            margin: 1%;
+
+            appearance: auto !important;
+            text-rendering: auto !important;
+            color: buttontext !important;
+            letter-spacing: normal !important;
+            word-spacing: normal !important;
+            line-height: normal !important;
+            text-transform: none !important;
+            text-indent: 0px !important;
+            text-shadow: none !important;
+            display: inline-block !important;
+            text-align: center !important;
+            align-items: flex-start !important;
+            cursor: default !important;
+            box-sizing: border-box !important;
+            background-color: buttonface !important;
+            padding: 1px 6px !important;
+            border-width: 2px !important;
+            border-style: outset !important;
+            border-color: buttonborder !important;
+            border-image: initial !important;
+        }
+        *
+        {
+            /* 
+            flex-flow: wrap;
+            flex: 1; */
+        }
+
+mfrac {
+    position: relative;
+}
+
+msqrt {
+    /* position: relative; */
+    /* width: 100%; */
+    /* flex-flow: wrap; */
+    /* display: math; */
+}
+
+math {
+    /* width: 100%; */
+    /* position: relative; */
+}
+
+html {
+    /* width: 100%; */
+}
+
+body {/* margin: 0; *//* width: 100%; */row {
+}
+
+mfrac {
+    width: 100%;
+}
+
+msqrt {
+    /* width: -webkit-fill-available; */
+}
+        math
+        {
+    /*         display: flex;
+            align-items: center;
+ */
+    /* width: -webkit-fill-available; */
+    }
+    </style>
+</head>
+<body>
+     <div id="f1" class="calc">
+        <div id="f60_num">60</div>
+        <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <mfrac>
+                <mrow>
+                    <mtext>
+                        <input type="number" placeholder="siklik" id="inp60_1_1">
+                    </mtext>
+                    <mo>x</mo>
+                    <mtext>
+                        <input type="number" placeholder="yeni gr" id="inp60_1_2">
+                    </mtext>
+                </mrow>
+                <mtext>
+                    <input type="number" placeholder="eski gr" id="inp60_2_1">
+                </mtext>
+            </mfrac>
+        </math>
+        <button type="button" id="res60">=</button>
+        <div id="ret60"></div>
+    </div>
+    <script defer>
+        function calc60(params) {
+            const siklik = parseFloat(document.querySelector("#inp60_1_1").value);
+            const yeniGr = parseFloat(document.querySelector("#inp60_1_2").value);
+            const eskiGr = parseFloat(document.querySelector("#inp60_2_1").value);
+            const result = (siklik * yeniGr) / eskiGr;
+            document.getElementById("ret60").innerText = result;
+        }
+        document.getElementById("res60").addEventListener("click", calc60);
+    </script>
+</body>
+</html>
